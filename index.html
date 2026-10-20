@@ -21,6 +21,25 @@ footer{padding:27px 0;color:#aaa394;font-size:.85rem}.foot{display:flex;justify-
 @media(max-width:850px){.navlinks{gap:12px;font-size:.83rem}.nav>.btn{display:none}.mobile-cta{display:inline-flex}.hero-grid{gap:22px}.hero-art{min-height:270px}.strip-item{justify-content:flex-start}.grid{gap:12px}.card{padding:22px}}
 @media(max-width:650px){.nav{min-height:72px;flex-wrap:wrap;padding:10px 0}.brand-logo{width:42px;height:42px}.brand-logo svg{width:31px;height:31px}.brand strong{font-size:1rem}.navlinks{order:3;width:100%;overflow-x:auto;justify-content:flex-start;padding:5px 0 8px;white-space:nowrap}.mobile-cta{padding:9px 13px;font-size:.82rem}.hero-grid{grid-template-columns:1fr;padding:38px 0 45px;gap:10px}.hero-art{grid-row:1;min-height:205px}.halo{width:min(250px,72vw)}.logo-halo{padding:12px}.hero-company-logo{width:88%;height:88%}.halo:before{inset:15px}.halo:after{inset:35px}.wifi-icon{font-size:7rem}.art-tag{bottom:0;right:0;font-size:.8rem}.hero-copy{text-align:center}.hero p{font-size:.94rem}.actions,.trust{justify-content:center}.strip-grid{grid-template-columns:1fr}.strip-item{justify-content:flex-start;border-left:0;border-bottom:1px solid #302719;padding:14px 4px}.strip-item:last-child{border-bottom:0}.content{padding:55px 0!important}.grid{grid-template-columns:1fr}.card{padding:23px}.about-grid{grid-template-columns:1fr}.about-points{grid-template-columns:1fr 1fr}.contact-grid{grid-template-columns:1fr}.section-head{margin-bottom:25px}.foot{justify-content:center;text-align:center}.footnav{justify-content:center}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Animated internet delivery explainer */
+.network-scene{padding:62px 0;background:radial-gradient(ellipse at center,#3b2b1044,transparent 68%),#0b0b0a;border-bottom:1px solid var(--line);overflow:hidden}
+.network-board{position:relative;border:1px solid #6e5427;border-radius:24px;background:linear-gradient(145deg,#17140e,#080909);padding:22px;box-shadow:0 20px 55px #0008;overflow:hidden}
+.network-board:before{content:"";position:absolute;inset:0;background-image:linear-gradient(#ffffff08 1px,transparent 1px),linear-gradient(90deg,#ffffff08 1px,transparent 1px);background-size:28px 28px;pointer-events:none}
+.network-svg{position:relative;display:block;width:100%;height:auto;min-height:230px;overflow:visible}
+.signal-wave{fill:none;stroke:#f5cf70;stroke-width:3;stroke-linecap:round;opacity:.75;transform-origin:center;animation:wavePulse 2.2s ease-out infinite}
+.signal-wave.w2{animation-delay:.7s}.signal-wave.w3{animation-delay:1.4s}
+.data-flow{fill:none;stroke:#f4c65d;stroke-width:4;stroke-linecap:round;stroke-dasharray:9 15;animation:dataRun 1.3s linear infinite;filter:drop-shadow(0 0 5px #e4b94f)}
+.router-wave{fill:none;stroke:#ffe4a0;stroke-width:3;stroke-linecap:round;stroke-dasharray:5 8;animation:dataRun 1.7s linear infinite}
+.scene-caption{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:10px}
+.scene-step{border:1px solid #57421e;border-radius:14px;padding:12px 10px;text-align:center;background:#0c0c0b;color:#e8dfcd;font-size:.88rem}
+.scene-step b{display:block;color:var(--gold-light);margin-bottom:3px}.scene-step span{color:#aaa18f;font-size:.78rem}
+.map-frame{width:100%;height:360px;border:1px solid #6b5124;border-radius:18px;background:#111;display:block}
+.map-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+@keyframes dataRun{to{stroke-dashoffset:-48}}@keyframes wavePulse{0%{opacity:0;transform:scale(.75)}35%{opacity:.9}100%{opacity:0;transform:scale(1.22)}}
+@media(max-width:650px){.network-scene{padding:44px 0}.network-board{padding:10px;border-radius:17px}.network-svg{min-height:180px}.scene-caption{grid-template-columns:repeat(2,1fr)}.map-frame{height:300px}}
+@media(prefers-reduced-motion:reduce){.signal-wave,.data-flow,.router-wave{animation:none!important;stroke-dasharray:none}}
+
 </style>
 </head>
 <body>
@@ -55,6 +74,32 @@ footer{padding:27px 0;color:#aaa394;font-size:.85rem}.foot{display:flex;justify-
     </div>
   </div>
 </section>
+
+<section class="network-scene" id="how-it-works" aria-labelledby="network-title">
+ <div class="wrap">
+  <div class="section-head"><span class="kicker">من البرج إلى منزلك</span><h2 class="section-title" id="network-title">كيف يصل الإنترنت إليك؟</h2><p class="section-sub">شاهد مسار الاتصال من برج الشركة إلى مستقبل السطح، ثم عبر كبل الشبكة إلى الراوتر داخل المنزل.</p></div>
+  <div class="network-board">
+   <svg class="network-svg" viewBox="0 0 900 310" role="img" aria-label="رسم متحرك يوضح انتقال الإنترنت من برج الشركة إلى مستقبل السطح ثم الكبل والراوتر داخل المنزل">
+    <defs><linearGradient id="goldLine" x1="0" x2="1"><stop offset="0" stop-color="#9b7025"/><stop offset=".5" stop-color="#ffe4a0"/><stop offset="1" stop-color="#c08a28"/></linearGradient></defs>
+    <!-- tower -->
+    <g stroke="url(#goldLine)" stroke-width="5" stroke-linejoin="round" fill="none"><path d="M95 235 L145 85 L195 235 M112 185 H178 M124 145 H166 M136 110 H154 M110 235 H180"/><path d="M145 85 V55 M126 69 Q145 48 164 69 M115 57 Q145 25 175 57" stroke-linecap="round"/></g>
+    <text x="145" y="270" fill="#ffe4a0" text-anchor="middle" font-size="19" font-family="Tahoma,Arial">برج الشركة</text>
+    <!-- radio signal -->
+    <path class="signal-wave" d="M215 92 Q260 130 215 168"/><path class="signal-wave w2" d="M233 78 Q294 130 233 182"/><path class="signal-wave w3" d="M252 63 Q328 130 252 197"/>
+    <!-- roof and receiver -->
+    <path d="M355 150 L430 92 L505 150" fill="none" stroke="#b8a57c" stroke-width="6" stroke-linejoin="round"/><path d="M376 148 V224 H484 V148" fill="#171711" stroke="#b8a57c" stroke-width="4"/><path d="M423 132 L447 117 L465 132 L450 149 Z" fill="#e4b94f" stroke="#ffe4a0" stroke-width="3"/><path d="M445 148 V168" stroke="#ffe4a0" stroke-width="4"/><path d="M433 168 H457" stroke="#ffe4a0" stroke-width="4"/>
+    <text x="430" y="270" fill="#ffe4a0" text-anchor="middle" font-size="19" font-family="Tahoma,Arial">مستقبل السطح</text>
+    <!-- cable -->
+    <path d="M455 168 C530 168 535 222 610 222" fill="none" stroke="#51401e" stroke-width="12" stroke-linecap="round"/><path class="data-flow" d="M455 168 C530 168 535 222 610 222"/>
+    <!-- home router -->
+    <g transform="translate(640 155)"><path d="M18 42 L28 0 M92 42 L82 0" stroke="#d6b45f" stroke-width="4" stroke-linecap="round"/><rect x="0" y="40" width="112" height="50" rx="10" fill="#282115" stroke="#e4b94f" stroke-width="3"/><circle cx="24" cy="65" r="4" fill="#ffe4a0"/><circle cx="40" cy="65" r="4" fill="#ffe4a0"/><path d="M54 62 Q68 49 82 62 M60 68 Q68 61 76 68" fill="none" stroke="#ffe4a0" stroke-width="3" stroke-linecap="round"/><path class="router-wave" d="M20 28 Q55 -2 90 28 M32 18 Q55 0 78 18"/></g>
+    <text x="695" y="270" fill="#ffe4a0" text-anchor="middle" font-size="19" font-family="Tahoma,Arial">الراوتر داخل البيت</text>
+   </svg>
+   <div class="scene-caption"><div class="scene-step"><b>١. برج الشركة</b><span>إرسال الإشارة لاسلكياً</span></div><div class="scene-step"><b>٢. مستقبل السطح</b><span>استقبال الإشارة وتوجيهها</span></div><div class="scene-step"><b>٣. كبل الشبكة</b><span>نقل الاتصال إلى الداخل</span></div><div class="scene-step"><b>٤. راوتر المنزل</b><span>توزيع الواي فاي للأجهزة</span></div></div>
+  </div>
+ </div>
+</section>
+
 <div class="strip"><div class="wrap strip-grid">
   <div class="strip-item"><div class="strip-icon">◈</div><div><strong>خدمات الإنترنت</strong><span>خيارات تناسب احتياجاتك</span></div></div>
   <div class="strip-item"><div class="strip-icon">⚙</div><div><strong>تركيب وتجهيز الشبكات</strong><span>حلول للواي فاي وأجهزة الشبكة</span></div></div>
@@ -142,6 +187,13 @@ footer{padding:27px 0;color:#aaa394;font-size:.85rem}.foot{display:flex;justify-
       <div class="contact-card"><div class="iconbox">◷</div><strong>أوقات الدوام</strong><span>من الساعة 10 صباحاً حتى 8 مساءً</span></div>
       <div class="contact-card"><div class="iconbox">⌖</div><strong>موقع المكتب</strong><span>دمشق – صحنايا</span></div>
     </div>
+
+    <div style="margin-top:34px">
+      <div class="section-head"><span class="kicker">زورونا في المكتب</span><h2 class="section-title">موقع شركة المسلم على الخريطة</h2><p class="section-sub">دمشق – صحنايا، ريف دمشق. اضغط على الاتجاهات للوصول إلى موقع المكتب.</p></div>
+      <iframe class="map-frame" title="موقع شركة المسلم لخدمات الإنترنت والواي فاي على خرائط Google" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=33.4290543%2C36.2247509&z=16&output=embed"></iframe>
+      <div class="map-actions"><a class="btn" href="https://www.google.com/maps/dir/?api=1&destination=33.4290543%2C36.2247509" target="_blank" rel="noopener noreferrer">افتح الاتجاهات إلى المكتب ↗</a><a class="btn outline" href="https://maps.app.goo.gl/DkUZPPcZemRuhLYF8" target="_blank" rel="noopener noreferrer">عرض الموقع على Google Maps</a></div>
+    </div>
+
     <div class="contact-actions"><a class="btn" href="mailto:almuslimwifi@gmail.com">✉ راسلنا بالبريد الإلكتروني</a><a class="btn outline" href="tel:+963951860025">اتصل بخدمة المشتركين</a></div>
     <p style="text-align:center;color:#b8b0a1;font-size:.82rem;margin-top:18px">طرق التسديد: نقداً أو عبر شام كاش. راجعوا قسم تسديد الفواتير لمعرفة الخطوات.</p>
   </div>
